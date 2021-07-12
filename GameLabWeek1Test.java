@@ -10,9 +10,9 @@ import org.junit.Test;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 
-public class GameLabTest {
+public class GameLabWeek1Test {
 
-	private static String[] stories = {
+	protected static String[] stories = {
 			"You are standing in an abandoned university office. There are neither students nor teachers around you. There’s a table in front of you with various papers, pens, a small puzzle toy, and a calculator. A large window shows an empty office building; there are no Zombies in the empty building (as far as you can tell). Behind you is a dark and mysterious door that leads to a well-lit corridor with a fireproof ceiling and floor. You feel a sense of Wi-Fi around you, the grinding of an LCD operated coffee machine can be heard in the distance. You are not thirsty, but you rather have a craving for justice.",
 			"You are in a long hallway. There’s a man wearing glasses at the end of it, he looks harmless. West is a wall, east is the man, to the north is nothing but empty offices, a desperate sight. The carpeting in the hallway feels soft, you hear the clicking of a mouse in the distance. Your office is south (behind you).",
 			"You take the calculator from your desk. It’s a Casio FX-85gt Plus. The display shows the number 0.1134. You turn it upside down; now the Casio greets you with a friendly “hello”, nice. You hold the calculator in your hand.",
@@ -114,99 +114,110 @@ public class GameLabTest {
 		Assert.assertTrue("I'm pretty sure that I'm not " + age + " years old, I was born in 1983!", test);
 	}
 
-	@Test
-	@Tag("lab2")
-	@DisplayName("Test if you print the story after my move.")
-	public void gameLab2SecondStoryTest() {
-		runGameWithInputs(GOOD_INPUTS);
-		boolean test = output.contains(stories[2]);
-		Assert.assertTrue(
-				"The progression of the story was not what I expected after doing the move 'take item'. Make sure you print the correct story, and that your print the story exactly like the assignment.",
-				test);
-	}
+	// @Test
+	// @Tag("lab2")
+	// @DisplayName("Test if you print the story after my move.")
+	// public void gameLab2SecondStoryTest() {
+	// runGameWithInputs(GOOD_INPUTS);
+	// boolean test = output.contains(stories[2]);
+	// Assert.assertTrue(
+	// "The progression of the story was not what I expected after doing the move
+	// 'take item'. Make sure you print the correct story, and that your print the
+	// story exactly like the assignment.",
+	// test);
+	// }
 
-	@Test
-	@Tag("lab2")
-	@DisplayName("Test your takeAction function for the correct state transitions.")
-	public void gameLab2TakeActionTest() {
-		Assert.assertEquals(Game.takeAction("open the door", 0), 1);
-		Assert.assertEquals(Game.takeAction("take item", 0), 2);
-		Assert.assertEquals(Game.takeAction("go east", 1), 3);
-	}
+	// @Test
+	// @Tag("lab2")
+	// @DisplayName("Test your takeAction function for the correct state
+	// transitions.")
+	// public void gameLab2TakeActionTest() {
+	// Assert.assertEquals(Game.takeAction("open the door", 0), 1);
+	// Assert.assertEquals(Game.takeAction("take item", 0), 2);
+	// Assert.assertEquals(Game.takeAction("go east", 1), 3);
+	// }
 
-	@Test
-	@Tag("lab2")
-	@DisplayName("Test your printState function for the correct states.")
-	public void gameLab2PrintStateTest() {
-		for (var i = 0; i < 4; i++) {
-			var outputStream = getOutputStream();
-			Game.printState(i);
-			String outp = outputStream.toString(StandardCharsets.UTF_8);
+	// @Test
+	// @Tag("lab2")
+	// @DisplayName("Test your printState function for the correct states.")
+	// public void gameLab2PrintStateTest() {
+	// for (var i = 0; i < 4; i++) {
+	// var outputStream = getOutputStream();
+	// Game.printState(i);
+	// String outp = outputStream.toString(StandardCharsets.UTF_8);
 
-			Assert.assertTrue(
-					"Check your output for printState(" + i + ") it is not what I expected.. \n - you: "
-							+ outp.substring(0, 20) + "...\n - expected: " + stories[i].substring(0, 20) + "...",
-					outp.startsWith(stories[i].substring(0, 20)));
-		}
-	}
+	// Assert.assertTrue(
+	// "Check your output for printState(" + i + ") it is not what I expected.. \n -
+	// you: "
+	// + outp.substring(0, 20) + "...\n - expected: " + stories[i].substring(0, 20)
+	// + "...",
+	// outp.startsWith(stories[i].substring(0, 20)));
+	// }
+	// }
 
-	@Test
-	@Tag("lab3")
-	@DisplayName("Test your takeAction function for the correct state transitions.")
-	public void gameLab3TakeActionTest() {
+	// @Test
+	// @Tag("lab3")
+	// @DisplayName("Test your takeAction function for the correct state
+	// transitions.")
+	// public void gameLab3TakeActionTest() {
 
-		Assert.assertEquals(Game.takeAction("open the door", 0, stateMatrix), 1);
-		Assert.assertEquals(Game.takeAction("take item", 0, stateMatrix), 2);
-		Assert.assertEquals(Game.takeAction("go east", 1, stateMatrix), 3);
-	}
+	// Assert.assertEquals(Game.takeAction("open the door", 0, stateMatrix), 1);
+	// Assert.assertEquals(Game.takeAction("take item", 0, stateMatrix), 2);
+	// Assert.assertEquals(Game.takeAction("go east", 1, stateMatrix), 3);
+	// }
 
-	@Test
-	@Tag("lab3")
-	@DisplayName("Test your getStory function for the correct states.")
-	public void gameLab3GetStory() {
-		for (var i = 0; i < 4; i++) {
-			String story = Game.getStory(i, stories);
-			Assert.assertTrue(
-					"Check your output for getStory(" + i + ") it is not what I expected.. \n - you start with: "
-							+ story.substring(0, 20) + "...\n - expected: " + stories[i].substring(0, 20) + "...",
-					story.startsWith(stories[i].substring(0, 20)));
-		}
-	}
+	// @Test
+	// @Tag("lab3")
+	// @DisplayName("Test your getStory function for the correct states.")
+	// public void gameLab3GetStory() {
+	// for (var i = 0; i < 4; i++) {
+	// String story = Game.getStory(i, stories);
+	// Assert.assertTrue(
+	// "Check your output for getStory(" + i + ") it is not what I expected.. \n -
+	// you start with: "
+	// + story.substring(0, 20) + "...\n - expected: " + stories[i].substring(0, 20)
+	// + "...",
+	// story.startsWith(stories[i].substring(0, 20)));
+	// }
+	// }
 
-	String[] endings = { "eloping algorithms.", "You die of boredom.", "eloping algorithms.", "eloping algorithms.",
-			"eloping algorithms." };
+	// String[] endings = { "eloping algorithms.", "You die of boredom.", "eloping
+	// algorithms.", "eloping algorithms.",
+	// "eloping algorithms." };
 
-	@Test
-	@Tag("lab4")
-	@DisplayName("Test your tellStory function for the correct output.")
-	public void gameLab4tellStory() {
-		for (var i = 0; i < 5; i++) {
-			var outputStream = getOutputStream();
-			Game.tellStory(i, stateMatrix, stories, new boolean[stories.length]);
-			String outp = outputStream.toString(StandardCharsets.UTF_8);
+	// @Test
+	// @Tag("lab4")
+	// @DisplayName("Test your tellStory function for the correct output.")
+	// public void gameLab4tellStory() {
+	// for (var i = 0; i < 5; i++) {
+	// var outputStream = getOutputStream();
+	// Game.tellStory(i, stateMatrix, stories, new boolean[stories.length]);
+	// String outp = outputStream.toString(StandardCharsets.UTF_8);
 
-			Assert.assertTrue(
-					"Check the start of your output for tellStory(" + i
-							+ ") it is not what I expected.. \n - you start with: " + outp.substring(0, 22)
-							+ "...\n - but I expected: " + stories[i].substring(0, 22) + "...",
-					outp.startsWith(stories[i].substring(0, 20)));
+	// Assert.assertTrue(
+	// "Check the start of your output for tellStory(" + i
+	// + ") it is not what I expected.. \n - you start with: " + outp.substring(0,
+	// 22)
+	// + "...\n - but I expected: " + stories[i].substring(0, 22) + "...",
+	// outp.startsWith(stories[i].substring(0, 20)));
 
-			var n = outp.length();
-			var end = outp.substring(n - 25, n);
-			Assert.assertTrue("Check the end of your output for tellStory(" + i
-					+ ") it is not what I expected.. \n - you end with: " + end + "...\n - but I expected: "
-					+ endings[i], end.replace("\n", "").endsWith(endings[i]));
-		}
-	}
+	// var n = outp.length();
+	// var end = outp.substring(n - 25, n);
+	// Assert.assertTrue("Check the end of your output for tellStory(" + i
+	// + ") it is not what I expected.. \n - you end with: " + end + "...\n - but I
+	// expected: "
+	// + endings[i], end.replace("\n", "").endsWith(endings[i]));
+	// }
+	// }
 
-	private ByteArrayOutputStream getOutputStream() {
+	protected ByteArrayOutputStream getOutputStream() {
 		var baos = new ByteArrayOutputStream();
 		var ps = new PrintStream(baos);
 		System.setOut(ps);
 		return baos;
 	}
 
-	private void sendInput(String input) {
+	protected void sendInput(String input) {
 		System.setIn(new ByteArrayInputStream(input.getBytes()));
 	}
 
