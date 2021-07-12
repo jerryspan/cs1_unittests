@@ -4,7 +4,7 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.junit.jupiter.api.DisplayName;
 
-public class GameLabWeek4Test extends GameLabWeek3Test {
+public class GameLabWeek4Test extends GameLabWeek1Test {
 
 	String[] endings = { "eloping algorithms.", "You die of boredom.", "eloping algorithms.", "eloping algorithms.",
 			"eloping algorithms." };

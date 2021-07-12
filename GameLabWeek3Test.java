@@ -2,7 +2,17 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.junit.jupiter.api.DisplayName;
 
-public class GameLabWeek3Test extends GameLabWeek2Test {
+public class GameLabWeek3Test extends GameLabWeek1Test {
+
+	@Test
+	@DisplayName("Test if you print the story after my move.")
+	public void gameLab3SecondStoryTest() {
+		runGameWithInputs(GOOD_INPUTS);
+		boolean test = output.contains(stories[2]);
+		Assert.assertTrue(
+				"The progression of the story was not what I expected after doing the move 'take item'. Make sure you print the correct story, and that your print the story exactly like the assignment.",
+				test);
+	}
 
 	@Test
 	@DisplayName("Test your takeAction function for the correct state transitions.")
