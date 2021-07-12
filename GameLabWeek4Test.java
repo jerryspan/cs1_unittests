@@ -3,7 +3,6 @@ import java.nio.charset.StandardCharsets;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Tag;
 
 public class GameLabWeek4Test extends GameLabWeek3Test {
 
@@ -11,7 +10,6 @@ public class GameLabWeek4Test extends GameLabWeek3Test {
 			"eloping algorithms." };
 
 	@Test
-	@Tag("lab4")
 	@DisplayName("Test your tellStory function for the correct output.")
 	public void gameLab4tellStory() {
 		for (var i = 0; i < 5; i++) {

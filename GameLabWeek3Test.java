@@ -1,12 +1,10 @@
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Tag;
 
 public class GameLabWeek3Test extends GameLabWeek2Test {
 
 	@Test
-	@Tag("lab3")
 	@DisplayName("Test your takeAction function for the correct state transitions.")
 	public void gameLab3TakeActionTest() {
 		Assert.assertEquals(Game.takeAction("open the door", 0, stateMatrix), 1);
@@ -15,7 +13,6 @@ public class GameLabWeek3Test extends GameLabWeek2Test {
 	}
 
 	@Test
-	@Tag("lab3")
 	@DisplayName("Test your getStory function for the correct states.")
 	public void gameLab3GetStory() {
 		for (var i = 0; i < 4; i++) {
