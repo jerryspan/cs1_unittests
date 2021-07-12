@@ -1,6 +1,3 @@
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
 import java.util.Calendar;
 
 import org.junit.Assert;
