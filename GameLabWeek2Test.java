@@ -28,7 +28,7 @@ public class GameLabWeek2Test extends GameLabWeek1Test {
 	@DisplayName("Test your printState function for the correct states.")
 	public void gameLab2PrintStateTest() {
 		for (var i = 0; i < 4; i++) {
-			var outputStream = getOutputStream();
+			var outputStream = InputOutput.getOutputStream();
 			Game.printState(i);
 			String outp = outputStream.toString(StandardCharsets.UTF_8);
 

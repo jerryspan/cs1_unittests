@@ -44,9 +44,9 @@ public class GameLabWeek1Test {
 	}
 
 	public void runGameWithInputs(String inputs) {
-		var outputStream = getOutputStream();
+		var outputStream = InputOutput.getOutputStream();
 		System.out.println("Running game with inputs: " + inputs);
-		sendInput(inputs);
+		InputOutput.sendInput(inputs);
 		Game.main(new String[] {});
 		this.output = outputStream.toString();
 	}
@@ -105,16 +105,4 @@ public class GameLabWeek1Test {
 		boolean test = age == (year - 1983);
 		Assert.assertTrue("I'm pretty sure that I'm not " + age + " years old, I was born in 1983!", test);
 	}
-
-	protected ByteArrayOutputStream getOutputStream() {
-		var baos = new ByteArrayOutputStream();
-		var ps = new PrintStream(baos);
-		System.setOut(ps);
-		return baos;
-	}
-
-	protected void sendInput(String input) {
-		System.setIn(new ByteArrayInputStream(input.getBytes()));
-	}
-
 }

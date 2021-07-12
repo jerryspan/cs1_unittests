@@ -3,6 +3,7 @@ import org.junit.Test;
 import org.junit.jupiter.api.DisplayName;
 
 public class GameLabWeek3Test extends GameLabWeek1Test {
+	// In week 3 the takeAction method is adjusted, so we cannot inherit from week 2
 
 	@Test
 	@DisplayName("Test if you print the story after my move.")

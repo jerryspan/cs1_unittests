@@ -5,6 +5,7 @@ import org.junit.Test;
 import org.junit.jupiter.api.DisplayName;
 
 public class GameLabWeek4Test extends GameLabWeek1Test {
+	// In week 3 the takeAction method is adjusted, so we cannot inherit from week 2
 
 	String[] endings = { "eloping algorithms.", "You die of boredom.", "eloping algorithms.", "eloping algorithms.",
 			"eloping algorithms." };
@@ -13,7 +14,7 @@ public class GameLabWeek4Test extends GameLabWeek1Test {
 	@DisplayName("Test your tellStory function for the correct output.")
 	public void gameLab4tellStory() {
 		for (var i = 0; i < 5; i++) {
-			var outputStream = getOutputStream();
+			var outputStream = InputOutput.getOutputStream();
 			Game.tellStory(i, stateMatrix, stories, new boolean[stories.length]);
 			String outp = outputStream.toString(StandardCharsets.UTF_8);
 
