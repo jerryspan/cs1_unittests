@@ -10,7 +10,7 @@ import org.junit.Test;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 
-public class GameLab4Test {
+public class GameLabTest {
 
 	private static String[] stories = {
 			"You are standing in an abandoned university office. There are neither students nor teachers around you. There’s a table in front of you with various papers, pens, a small puzzle toy, and a calculator. A large window shows an empty office building; there are no Zombies in the empty building (as far as you can tell). Behind you is a dark and mysterious door that leads to a well-lit corridor with a fireproof ceiling and floor. You feel a sense of Wi-Fi around you, the grinding of an LCD operated coffee machine can be heard in the distance. You are not thirsty, but you rather have a craving for justice.",
@@ -145,8 +145,8 @@ public class GameLab4Test {
 
 			Assert.assertTrue(
 					"Check your output for printState(" + i + ") it is not what I expected.. \n - you: "
-							+ outp.substring(0, 20) + "...\n - expected: " + states[i].substring(0, 20) + "...",
-					outp.startsWith(states[i].substring(0, 20)));
+							+ outp.substring(0, 20) + "...\n - expected: " + stories[i].substring(0, 20) + "...",
+					outp.startsWith(stories[i].substring(0, 20)));
 		}
 	}
 
