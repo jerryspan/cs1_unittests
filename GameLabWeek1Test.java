@@ -71,7 +71,7 @@ public class GameLabWeek1Test {
 	@DisplayName("Test if you print the player's name.")
 	public void gameLab1PlayerNameTest() {
 		runGameWithInputs(GOOD_INPUTS);
-		boolean test = output.contains("Pepels");
+		boolean test = output.contains("by: ");
 		Assert.assertTrue("Do you know who I am? Make sure to ask and print the player's name after the title.", test);
 	}
 
