@@ -40,18 +40,22 @@ public class GameLabWeek1Test {
 		stateMatrix[5][1] = "go south";
 	}
 
-	public void runGameWithInputs(String inputs) {
+	public void runGameWithInputs(String inputs, boolean lowerCase) {
 		var outputStream = InputOutput.getOutputStream();
 		System.out.println("Running game with inputs: " + inputs);
 		InputOutput.sendInput(inputs);
 		Game.main(new String[] {});
-		this.output = outputStream.toString();
+		if (lowerCase) {
+			this.output = outputStream.toString().toLowerCase();
+		} else {
+			this.output = outputStream.toString();
+		}
 	}
 
 	@Test
 	@DisplayName("Test if you mention your name in the game title.")
 	public void gameLab1CreditsTest() {
-		runGameWithInputs(GOOD_INPUTS);
+		runGameWithInputs(GOOD_INPUTS, true);
 		boolean test = output.contains("by: ");
 		Assert.assertTrue(
 				"Hey! You want credit for your work right?? Make sure to include by: your name in your output!", test);
@@ -61,7 +65,7 @@ public class GameLabWeek1Test {
 	@Test
 	@DisplayName("Test if your title includes the ASCII art.")
 	public void gameLab1ASCIITest() {
-		runGameWithInputs(GOOD_INPUTS);
+		runGameWithInputs(GOOD_INPUTS, false);
 		boolean test = output
 				.contains("/ /_/ /  __/ /  / /  / /_/ / (__  )  / ___ / /_/ /| |/ /  __/ / / / /_/ /_/ / /  /  __/");
 		Assert.assertTrue("I think your ASCII Art is not ready for the Bonnefanten Museum yet!", test);
@@ -70,7 +74,7 @@ public class GameLabWeek1Test {
 	@Test
 	@DisplayName("Test if you print the player's name.")
 	public void gameLab1PlayerNameTest() {
-		runGameWithInputs(GOOD_INPUTS);
+		runGameWithInputs(GOOD_INPUTS, false);
 		boolean test = output.contains("by: ");
 		Assert.assertTrue("Do you know who I am? Make sure to ask and print the player's name after the title.", test);
 	}
@@ -78,8 +82,8 @@ public class GameLabWeek1Test {
 	@Test
 	@DisplayName("Test if you print the first part of the story.")
 	public void gameLab1StoryTest() {
-		runGameWithInputs(GOOD_INPUTS);
-		boolean test = output.contains("of Wi-Fi around you, the grinding of an LCD operated coffee machine can be");
+		runGameWithInputs(GOOD_INPUTS, true);
+		boolean test = output.contains("around you, the grinding of an lcd operated coffee machine can be");
 		Assert.assertTrue(
 				"What is this game about? Did you print the story (make sure it is exactlty the same as the assignment text).",
 				test);
@@ -88,7 +92,7 @@ public class GameLabWeek1Test {
 	@Test
 	@DisplayName("Test if you print the chosen move.")
 	public void gameLab1MoveTest() {
-		runGameWithInputs(GOOD_INPUTS);
+		runGameWithInputs(GOOD_INPUTS, true);
 		boolean test = output.contains("take item");
 		Assert.assertTrue("Did you print my move? Make sure to ask for a move and print it after printing the story",
 				test);

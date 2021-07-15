@@ -16,19 +16,21 @@ public class GameLabWeek4Test extends GameLabWeek1Test {
 		for (var i = 0; i < 5; i++) {
 			var outputStream = InputOutput.getOutputStream();
 			Game.tellStory(i, stateMatrix, stories, new boolean[stories.length]);
-			String outp = outputStream.toString(StandardCharsets.UTF_8);
+			String outp = outputStream.toString(StandardCharsets.UTF_8).toLowerCase();
 
 			Assert.assertTrue(
 					"Check the start of your output for tellStory(" + i
 							+ ") it is not what I expected.. \n - you start with: " + outp.substring(0, 22)
-							+ "...\n - but I expected: " + stories[i].substring(0, 22) + "...",
-					outp.startsWith(stories[i].substring(0, 20)));
+							+ "...\n - but I expected: " + stories[i].substring(0, 22).toLowerCase() + "...",
+					outp.startsWith(stories[i].substring(0, 20).toLowerCase()));
 
 			var n = outp.length();
 			var end = outp.substring(n - 25, n);
-			Assert.assertTrue("Check the end of your output for tellStory(" + i
-					+ ") it is not what I expected.. \n - you end with: " + end + "...\n - but I expected: "
-					+ endings[i], end.replace("\n", "").endsWith(endings[i]));
+			Assert.assertTrue(
+					"Check the end of your output for tellStory(" + i
+							+ ") it is not what I expected.. \n - you end with: " + end.toLowerCase()
+							+ "...\n - but I expected: " + endings[i].toLowerCase(),
+					end.toLowerCase().replace("\n", "").endsWith(endings[i].toLowerCase()));
 		}
 	}
 }
