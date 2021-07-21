@@ -2,6 +2,7 @@ import java.util.Arrays;
 
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.jupiter.api.DisplayName;
 
 public class RPSLOTest {
     // Rock = 0, Paper = 1, Scissors = 2, Lizzard = 3, Spock = 4
@@ -37,6 +38,7 @@ public class RPSLOTest {
     }
 
     @Test
+    @DisplayName("Testing if each option gives the correct response!")
     public void testRPSLOIGame() {
         String[] choices = { "R", "P", "S", "L", "O" };
 

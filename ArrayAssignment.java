@@ -5,6 +5,6 @@ public class ArrayAssignment {
     }
 
     public static void diagonalPrint(int[][] M) {
-        return -1;
+
     }
 }
