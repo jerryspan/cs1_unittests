@@ -22,7 +22,7 @@ public class TimeToLiveTest {
         TimeToLive.main(new String[] {});
         var output = outputStream.toString().toLowerCase();
         // You have 18980 days, weeks, or 624 months left.
-        Assert.assertTrue("I think I should have 18980 days, weeks, or 624 months left. You say: " + output,
+        Assert.assertTrue("I think I should have 18980 days, weeks, or 624 months left. Your output says:\n" + output,
                 output.contains("18980") && output.contains("2704") && output.contains("624"));
 
         outputStream = InputOutput.getOutputStream();
@@ -30,7 +30,8 @@ public class TimeToLiveTest {
         TimeToLive.main(new String[] {});
         output = outputStream.toString().toLowerCase();
         // You have 12410 days, 1768 weeks, or 408 months left.
-        Assert.assertTrue("I think I should have 12410 days, 1768 weeks, or 408 months left.",
+        Assert.assertTrue(
+                "I think I should have 12410 days, 1768 weeks, or 408 months left. Your output says:\n" + output,
                 output.contains("12410") && output.contains("1768") && output.contains("408"));
     }
 }
