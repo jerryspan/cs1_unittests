@@ -21,7 +21,7 @@ public class PrimesTest {
     @DisplayName("Tests your countPrimes method. It should output the number of primes between 0 and N")
     public void testCountPrimes() {
         int[] inputs = { 15, 150, 56 };
-        int[] outputs = { 5, 34, 15 };
+        int[] outputs = { 6, 35, 16 };
         String message = "I expected %d primes between 0 and %d, you say: %d";
         for (int i = 0; i < inputs.length; i++) {
             var result = Primes.countPrimes(inputs[i]);
